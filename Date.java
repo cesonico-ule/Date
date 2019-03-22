@@ -36,7 +36,7 @@ public class Date {
 
 int mothDays(){
 	int monthDays = 0;
-	switch{
+	switch(this.month){
 	case 1:
 	case 3:
 	case 5:
@@ -60,6 +60,10 @@ int mothDays(){
 
 return monthDays;
 }
+
+
+//	EJERCICIOS:
+
 
 
 // Métodos isSame con IF
@@ -100,7 +104,7 @@ boolean isSameIf(){
 return is;
 }
 
-// Mëtodos isSame limpios
+// Métodos isSame limpios
 
 boolean isSameYear(){
 
@@ -123,21 +127,150 @@ retrun false;
 }
 
 
-// 2
+// Método que devuelve el nombre del mes
 
-int returnMonth();
-int checkDay();
-int season();
+String returnMonth(){
+	String name;
+	switch(this.month){
+	case 1:
+		name = "Enero";
+	break;
+	case 2:
+		name = "Febrero";
+	break;
+	case 3:
+		name = "Marzo";
+	break;
+	case 4:
+		name = "Abril";
+	break;
+	case 5:
+		name = "Mayo";
+	break;
+	case 6:
+		name = "Junio";
+	break;
+	case 7:
+		name = "Julio";
+	break;
+	case 8:
+		name = "Agosto";
+	break;
+	case 9:
+		name = "Septiembre";
+	break;
+	case 10:
+		name = "Octubre";
+	break;
+	case 11:
+		name = "Noviembre";
+	break;
+	case 12:
+		name = "Diciembre";
+	break;
+	default:
+		name = "-1";
+	}
+return name;
+}
 
-//
+// Método que comprueba si el día del mes está bien ???
 
-int monthsLeft();
-int returnStringDate();
-int daysUntilEnd();
-int monthSameDays();
-int daysSinceFirst();
+boolean checkDay(){
+	boolean checkDay;
 
-//
+return false;
+}
 
-int numberOfAttemps();
-int returnDayOfWeek();
+// Método que devuelve la estación
+
+String season(){
+	String season;
+	switch(this.month){
+	case 3:
+	case 4:
+	case 5:
+		name = "Primavera";
+	break;
+	case 6:
+	case 7:
+	case 8:
+		name = "Verano";
+	break;
+	case 9:
+	case 10:
+	case 11:
+		name = "Otoño";
+	break;
+	case 12:
+	case 1:
+	case 2:
+		name = "Invierno";
+	break;
+	default:
+		name = "-1";
+	}
+
+return season;
+}
+
+// Método que para una fecha devuelve los meses restantes para que acabe el año
+
+int monthsLeft(){
+	int months;
+
+return months;
+}
+
+// Método que devuelve la version String de la fecha
+
+String returnStringDate(){
+	String date;
+
+return date;
+}
+
+// ??
+
+String daysUntilEnd(){
+
+return "0";
+}
+
+// Método que para una fecha devuelve los meses con el mismo número de días
+
+String monthSameDays(){
+	String monthSameDays;
+
+return monthSameDays;
+}
+
+// Método que devuelve los días que van de año
+
+int daysSinceFirst(){
+	int days;
+
+return days;
+}
+
+// Random Attempts con while
+
+int numberOfAttemps(){
+	int i;
+return i;
+}
+
+// Random Attempts con do while
+
+int numberOfAttemps(){
+	int i;
+return i;
+}
+
+// Cálculo del día de la semana
+
+String returnDayOfWeek(){
+	String dayOfWeek;
+
+return dayOfWeek;
+}
