@@ -104,7 +104,7 @@ boolean isSameIf(){
 return is;
 }
 
-// Métodos isSame limpios
+// Métodos isSame limpios (por hacer)
 
 boolean isSameYear(){
 
@@ -174,7 +174,7 @@ String returnMonth(){
 return name;
 }
 
-// Método que comprueba si el día del mes está bien ???
+// Método que comprueba si el día del mes está bien (???)
 
 boolean checkDay(){
 	boolean checkDay;
@@ -214,7 +214,7 @@ String season(){
 return season;
 }
 
-// Método que para una fecha devuelve los meses restantes para que acabe el año
+// Método que para una fecha devuelve los meses restantes para que acabe el año (por hacer)
 
 int monthsLeft(){
 	int months;
@@ -222,30 +222,43 @@ int monthsLeft(){
 return months;
 }
 
-// Método que devuelve la version String de la fecha
+// Método que devuelve la version String de la fecha 
 
 String returnStringDate(){
-	String date;
-
+	String date = this.day + " - " + returnMonth() + " - " + this.year;
 return date;
 }
 
-// ??
+// Método que devuelve las fechas que quedan hasta que acabe el año (???)
 
 String daysUntilEnd(){
 
 return "0";
 }
 
-// Método que para una fecha devuelve los meses con el mismo número de días
+// Método que, para una fecha, devuelve los meses con el mismo número de días
 
 String monthSameDays(){
 	String monthSameDays;
+	switch (month){
+	case 31:
+		monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre, Diciembre";
+	break;
+	case 30:
+		monthSameDays = "Abril, Junio, Septiembre, Noviembre";
+	break;
+	case 28:
+		monthSameDays = "Febrero";
+	break;
+
+	default:
+		monthSameDays = "-1";
+	}
 
 return monthSameDays;
 }
 
-// Método que devuelve los días que van de año
+// Método que devuelve los días que van de año (por hacer)
 
 int daysSinceFirst(){
 	int days;
@@ -253,21 +266,21 @@ int daysSinceFirst(){
 return days;
 }
 
-// Random Attempts con while
+// Random Attempts con while (por hacer)
 
 int numberOfAttemps(){
 	int i;
 return i;
 }
 
-// Random Attempts con do while
+// Random Attempts con do while (por hacer)
 
 int numberOfAttemps(){
 	int i;
 return i;
 }
 
-// Cálculo del día de la semana
+// Cálculo del día de la semana (por hacer)
 
 String returnDayOfWeek(){
 	String dayOfWeek;
