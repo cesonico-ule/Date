@@ -34,7 +34,7 @@ public class Date {
 
 // Métodos auxiliares
 
-int mothDays(){
+int monthDays(){
 	int monthDays = 0;
 	switch(this.month){
 	case 1:
@@ -240,7 +240,7 @@ return "0";
 
 String monthSameDays(){
 	String monthSameDays;
-	switch (month){
+	switch (monthDays()){
 	case 31:
 		monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre, Diciembre";
 	break;
