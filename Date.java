@@ -29,9 +29,6 @@ public class Date {
 		return this.day + "/" + this.month + "/" + this.year;
 	}
 
-}
-
-
 // Métodos auxiliares
 
 int monthDays(){
@@ -130,160 +127,162 @@ retrun false;
 // Método que devuelve el nombre del mes
 
 String returnMonth(){
-	String name;
-	switch(this.month){
-	case 1:
-		name = "Enero";
-	break;
-	case 2:
-		name = "Febrero";
-	break;
-	case 3:
-		name = "Marzo";
-	break;
-	case 4:
-		name = "Abril";
-	break;
-	case 5:
-		name = "Mayo";
-	break;
-	case 6:
+		String name;
+		switch(this.month){
+		case 1:
+			name = "Enero";
+		break;
+		case 2:
+			name = "Febrero";
+		break;
+		case 3:
+			name = "Marzo";
+		break;
+		case 4:
+			name = "Abril";
+		break;
+		case 5:
+			name = "Mayo";
+		break;
+		case 6:
 		name = "Junio";
-	break;
-	case 7:
-		name = "Julio";
-	break;
-	case 8:
-		name = "Agosto";
-	break;
-	case 9:
-		name = "Septiembre";
-	break;
-	case 10:
-		name = "Octubre";
-	break;
-	case 11:
-		name = "Noviembre";
-	break;
-	case 12:
-		name = "Diciembre";
-	break;
-	default:
-		name = "-1";
+		break;
+		case 7:
+			name = "Julio";
+		break;
+		case 8:
+			name = "Agosto";
+			break;
+		case 9:
+			name = "Septiembre";
+		break;
+		case 10:
+			name = "Octubre";
+		break;
+		case 11:
+			name = "Noviembre";
+		break;
+			case 12:
+			name = "Diciembre";
+		break;
+		default:
+			name = "-1";
+		}
+	return name;
 	}
-return name;
-}
-
+	
 // Método que comprueba si el día del mes está bien (???)
-
-boolean checkDay(){
-	boolean checkDay;
-
-return false;
-}
+	
+	boolean checkDay(){
+		boolean checkDay;
+	
+	return false;
+	}
 
 // Método que devuelve la estación
 
-String season(){
-	String season;
-	switch(this.month){
-	case 3:
-	case 4:
-	case 5:
-		name = "Primavera";
-	break;
-	case 6:
-	case 7:
-	case 8:
-		name = "Verano";
-	break;
-	case 9:
-	case 10:
-	case 11:
-		name = "Otoño";
-	break;
-	case 12:
-	case 1:
-	case 2:
-		name = "Invierno";
-	break;
-	default:
-		name = "-1";
+	String season(){
+		String season;
+		switch(this.month){
+		case 3:
+		case 4:
+		case 5:
+			name = "Primavera";
+		break;
+		case 6:
+		case 7:
+		case 8:
+			name = "Verano";
+		break;
+		case 9:
+		case 10:
+		case 11:
+			name = "Otoño";
+		break;
+		case 12:
+		case 1:
+		case 2:
+			name = "Invierno";
+		break;
+		default:
+			name = "-1";
+		}
+		
+	return season;
 	}
-
-return season;
-}
 
 // Método que para una fecha devuelve los meses restantes para que acabe el año (por hacer)
 
-int monthsLeft(){
-	int months;
-
-return months;
-}
+	int monthsLeft(){
+		int months;
+	
+	return months;
+	}
 
 // Método que devuelve la version String de la fecha 
-
-String returnStringDate(){
-	String date = this.day + " - " + returnMonth() + " - " + this.year;
-return date;
-}
+	
+	String returnStringDate(){
+		String date = this.day + " - " + returnMonth() + " - " + this.year;
+	return date;
+	}
 
 // Método que devuelve las fechas que quedan hasta que acabe el año (???)
 
-String daysUntilEnd(){
-
-return "0";
-}
+	String daysUntilEnd(){
+	
+	return "0";
+	}
 
 // Método que, para una fecha, devuelve los meses con el mismo número de días
 
-String monthSameDays(){
-	String monthSameDays;
-	switch (monthDays()){
-	case 31:
-		monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre, Diciembre";
-	break;
-	case 30:
-		monthSameDays = "Abril, Junio, Septiembre, Noviembre";
-	break;
-	case 28:
-		monthSameDays = "Febrero";
-	break;
-
-	default:
-		monthSameDays = "-1";
+	String monthSameDays(){
+		String monthSameDays;
+		switch (monthDays()){
+		case 31:
+			monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre, Diciembre";
+		break;
+		case 30:
+			monthSameDays = "Abril, Junio, Septiembre, Noviembre";
+		break;
+		case 28:
+			monthSameDays = "Febrero";
+		break;
+	
+		default:
+			monthSameDays = "-1";
+		}
+	
+	return monthSameDays;
 	}
-
-return monthSameDays;
-}
 
 // Método que devuelve los días que van de año (por hacer)
 
-int daysSinceFirst(){
-	int days;
-
-return days;
-}
+	int daysSinceFirst(){
+		int days;
+	
+	return days;
+	}
 
 // Random Attempts con while (por hacer)
 
-int numberOfAttemps(){
-	int i;
-return i;
-}
+	int numberOfAttemps(){
+		int i;
+	return i;
+	}
 
 // Random Attempts con do while (por hacer)
 
-int numberOfAttemps(){
-	int i;
-return i;
-}
-
+	int numberOfAttemps(){
+		int i;
+	return i;
+	}
+	
 // Cálculo del día de la semana (por hacer)
+	
+	String returnDayOfWeek(){
+		String dayOfWeek;
+	
+	return dayOfWeek;
+	}
 
-String returnDayOfWeek(){
-	String dayOfWeek;
-
-return dayOfWeek;
 }
