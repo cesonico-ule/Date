@@ -1,5 +1,6 @@
 package es.unileon.prg.date;
 
+
 public class Date {
 
 	private int day;
@@ -9,7 +10,7 @@ public class Date {
 	public Date(int day, int month, int year) throws DateException{
 		this.year = year;
 		if (month < 1 || month > 12) {
-			throw new DateException("Mes " + month + " no válido" +
+			throw new DateException("Mes " + month + " no válido." +
 					" Valores posibles entre 1 y 12");
 		} else {
 			this.month = month;
@@ -17,7 +18,7 @@ public class Date {
 
 
 		if (day < 1 || day > daysOfMonth()){
-			throw new DateException("Díals " + month + " no válido" +
+			throw new DateException("Día " + day + " no válido." +
 					" Valores posibles entre 1 y " + daysOfMonth());
 		} else {
 			this.day = day;
@@ -31,10 +32,10 @@ public class Date {
 
 // Métodos auxiliares
 
-	private int daysOfMonth(){
+	public int daysOfMonth(){
 		int daysOfMonth = 0;
 		switch(this.month){
-			case 1:
+		case 1:
 		case 3:
 		case 5:
 		case 7:
@@ -51,6 +52,7 @@ public class Date {
 		break;	
 		case 2:
 			daysOfMonth = 28;
+		break;
 		default:
 			daysOfMonth = -1;
 		}
@@ -58,14 +60,13 @@ public class Date {
 	return daysOfMonth;
 	}
 
-
 //	EJERCICIOS:
 
 
 
 // Métodos isSame con IF
 
-	private boolean isSameYearIf(){
+	public boolean isSameYearIf(){
 		boolean isy = false;
 		if(this.year == year);{
 			isy = true;
@@ -73,7 +74,7 @@ public class Date {
 	return isy;
 	}
 
-	private boolean isSameMonthIf(){
+	public boolean isSameMonthIf(){
 		boolean ism = false;
 		if(this.year == year);{
 			ism = true;
@@ -81,7 +82,7 @@ public class Date {
 	return ism;
 	}
 
-	private boolean isSameDayIf(){
+	public boolean isSameDayIf(){
 		boolean isd = false;
 		if(this.year == year);{
 			isd = true;
@@ -89,7 +90,7 @@ public class Date {
 	return isd;
 	}
 	
-	private boolean isSameIf(){
+	public boolean isSameIf(){
 		boolean is = false;
 		if(this.year == year);{
 			if(this.month == month);{
@@ -101,32 +102,55 @@ public class Date {
 	return is;
 	}
 	
-// Métodos isSame limpios (por hacer)
+// Métodos isSame limpios
 	
-	private boolean isSameYear(){
-	
-	return false;
+	public boolean isSameYear(){
+		boolean isy = false;
+		while (this.year == year) {
+			isy = true;
+		break;
+		}
+	return isy;
 	}
 	
-	private boolean isSameMonth(){
-	
-	return false;
+	public boolean isSameMonth(){
+		boolean ism = false;
+		while (this.month == month) {
+			ism = true;
+		break;
+		}
+	return ism;
 	}
 	
-	private boolean isSameDay(){
-	
-	return false;
+	public boolean isSameDay(){
+		boolean isd = false;
+		while (this.day == day) {
+			isd = true;
+		break;
+		}
+	return isd;
 	}
 	
-	private boolean isSame(){
-	
-	return false;
+	public boolean isSame(){
+		boolean is = false;
+		while (this.year == year) {
+			while (this.month == month) {
+				while (this.day == day) {
+					is = true;
+				break;
+				}
+			break;
+			}
+		break;
+		}
+		
+	return is;
 	}
 
 
 // Método que devuelve el nombre del mes
 
-	private String returnMonth(){
+	public String returnMonth(){
 		String name;
 		switch(this.month){
 		case 1:
@@ -152,7 +176,7 @@ public class Date {
 		break;
 		case 8:
 			name = "Agosto";
-			break;
+		break;
 		case 9:
 			name = "Septiembre";
 		break;
@@ -171,17 +195,22 @@ public class Date {
 	return name;
 	}
 	
-// Método que comprueba si el día del mes está bien (???)
+// Método que comprueba si el día del mes está bien
 	
-	private boolean checkDay(){
+	public boolean checkDay() throws DateException{
 		boolean checkDay = false;
-	
+		if (day < 1 || day > daysOfMonth()){
+			throw new DateException("Día " + day + " no válido" +
+					" Valores posibles entre 1 y " + daysOfMonth());
+		} else {
+			checkDay = true;
+		}
 	return checkDay;
 	}
 
-// Método que devuelve la estación
+// Método que devuelve la estación del año
 
-	private String season(){
+	public String season(){
 		String season;
 		switch(this.month){
 		case 3:
@@ -213,41 +242,45 @@ public class Date {
 
 // Método que para una fecha devuelve los meses restantes para que acabe el año
 
-	private int monthsLeft(){
-		int monthsLeft = 0;
-		monthsLeft = 12 + 1 - month;
+	public String monthsLeft(){
+		String monthsLeft =returnMonth();
+		int i = this.month+1;
+		for(i=this.month+1;i<13;i++){
+			this.month = i;
+			monthsLeft = monthsLeft + ", " + returnMonth();
+		}
 	return monthsLeft;
 	}
 
-// Método que devuelve la version String de la fecha 
+// Método que devuelve la version String de la fecha
 	
-	private String returnStringDate(){
-		String date = this.day + " - " + returnMonth() + " - " + this.year;
-	return date;
+	public String returnDate(){
+		String fecha = this.day + " de " + returnMonth() + " de " + this.year;
+	return fecha;
 	}
 
 // Método que devuelve las fechas que quedan hasta que acabe el mes
 
-	private String daysUntilEnd(){
-		String daysUntilEnd = toString();
-		int i = this.month;
-			for(i=this.month;i<daysOfMonth();i++){
-				daysUntilEnd = daysUntilEnd + ", " + i + "/" + this.month + "/" + 
+	public String datesUntilEnd(){
+		String datesUntilEnd = toString();
+		int i = this.day+1;
+			for(i=this.day+1;i<daysOfMonth()+1;i++){
+				datesUntilEnd = datesUntilEnd + ", " + i + "/" + this.month + "/" + 
 										this.year;
 			}	
-	return daysUntilEnd;
+	return datesUntilEnd;
 	}
 
 // Método que, para una fecha, devuelve los meses con el mismo número de días
 
-	private String monthSameDays(){
+	public String monthSameDays(){
 		String monthSameDays;
 		switch (daysOfMonth()){
 		case 31:
-			monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre, Diciembre";
+			monthSameDays = "Enero, Marzo, Mayo, Julio, Agosto, Octubre y Diciembre";
 		break;
 		case 30:
-			monthSameDays = "Abril, Junio, Septiembre, Noviembre";
+			monthSameDays = "Abril, Junio, Septiembre y Noviembre";
 		break;
 		case 28:
 			monthSameDays = "Febrero";
@@ -262,34 +295,81 @@ public class Date {
 
 // Método que devuelve los días que van de año
 
-	private int daysSinceFirst(){
-		int daysOfYear = 0;
-		int i = this.month;
-		for(i=this.month;i>0;i--){
+	public int daysSinceFirst(){
+		int daysOfYear = this.day;
+		int i = this.month-1;
+		for(i=this.month-1;i>0;i--){
+			this.month=i;
 			daysOfYear = daysOfYear + daysOfMonth();
 		}
 	return daysOfYear;
 	}
 
-// Random Attempts con while (por hacer)
+// Random Attempts con while
 
-	private int numberOfAttempsw(){
-		int i = 0;
+	public int numberOfAttemptsW(){
+		int randomDay = 0, randomMonth = 0, i = 0;
+		while(randomDay != this.day) {
+			while(randomMonth != this.month){
+				randomMonth = (int)(Math.random() * 11 + 1);
+				i++;
+			}
+			randomDay = (int)(Math.random() * daysOfMonth() + 1);
+		}
+		System.out.println("Fin");
+		System.out.println(randomDay);
+		System.out.println(randomMonth + "\n");
 	return i;
 	}
 
-// Random Attempts con do while (por hacer)
+// Random Attempts con do while
 
-	private int numberOfAttempsdw(){
-		int i = 0;
+	public int numberOfAttemptsDw(){
+		int randomDay = 0, randomMonth = 0, i = 0;
+		do {
+			do {
+				randomMonth = (int)(Math.random() * 12 + 1);
+				i++;
+			}
+			while (this.month != randomMonth);
+			randomDay = (int)(Math.random() * daysOfMonth() + 1);
+		}
+		while (this.day != randomDay);
+		System.out.println("Fin");
+		System.out.println(randomDay);
+		System.out.println(randomMonth + "\n");
 	return i;
 	}
+// Cálculo del día de la semana
 	
-// Cálculo del día de la semana (por hacer)
-	
-	private String returnDayOfWeek(){
+	public String returnDayOfWeek(){
 		String dayOfWeek = "0";
-	
+		int firstDay = 0;
+		switch((daysSinceFirst()+firstDay)%7){
+		case 0:
+			dayOfWeek = "Lunes";
+		break;
+		case 1:
+			dayOfWeek = "Martes";
+		break;
+		case 2:
+			dayOfWeek = "Miércoles";
+		break;
+		case 3:
+			dayOfWeek = "Jueves";
+		break;
+		case 4:
+			dayOfWeek = "Viernes";
+		break;
+		case 5:
+			dayOfWeek = "Sábado";
+		break;
+		case 6:
+			dayOfWeek = "Domingo";
+		break;
+		default:
+			dayOfWeek = "-1";
+		}
 	return dayOfWeek;
 	}
 
