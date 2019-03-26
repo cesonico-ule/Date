@@ -16,12 +16,6 @@ public class MainDate {
 		
 // Método auxiliar
 
-		try {
-			today = new Date(10, 2, 2017);
-			System.out.println(today.daysOfMonth());
-		} catch (DateException e) {
-			System.out.println(e.getMessage());
-		}
 
 // Métodos <<isSame>>
 
